@@ -1,0 +1,58 @@
+{% extends "../base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Add Project Task</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {% comment %}{{form|crispy}}{% endcomment %}
+                
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.module|as_crispy_field}}
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.project|as_crispy_field}}
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.status|as_crispy_field}}
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.title|as_crispy_field}}
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.priority|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.description|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.totalMinutes|as_crispy_field}}
+                    </div>
+                </div>
+                <button  type="submit" class="btn btn-primary">Create Project Task</button>
+            </form>
+        </div>
+    </div>
+</div>
+  
+{% endblock content %}

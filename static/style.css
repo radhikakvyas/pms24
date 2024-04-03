@@ -1,0 +1,17 @@
+h1,h2{
+
+    color: aquamarine;
+  }
+  body{
+    background-size: cover;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('./assets/img/carousel-2.jpg');
+  }
+
+  a{
+    color: violet;
+  }
+  h3{
+    color: bisque;
+  }

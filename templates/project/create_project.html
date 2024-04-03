@@ -1,0 +1,49 @@
+{% extends "../base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Add Project</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {% comment %}{{form|crispy}}{% endcomment %}
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.name|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.description|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.technology|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.estimatedHours|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.startDate|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.completionDate|as_crispy_field}}
+                    </div>
+                </div>
+          
+                <button  type="submit" class="btn btn-primary">Add Project</button>
+            </form>
+        </div>
+    </div>
+</div>
+  
+{% endblock content %}

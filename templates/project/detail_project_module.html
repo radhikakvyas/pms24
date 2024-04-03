@@ -1,0 +1,15 @@
+{% extends "../base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{modules.project}}</h5>
+        <p class="card-text">{{modules.moduleName}}</p>
+        <p class="card-text">{{modules.estimatedHours}}</p>
+        <p class="card-text">{{modules.status}}</p>
+        <p class="card-text">{{modules.startDate}}</p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}" >                  
+    </head>
+    
+    <body>
+      <div align="center">
+        <div class="jumbotron bg-white">
+          <hr class="my-3"> 
+          <h1 class="display-4">Hello, Everyone!</h1>
+          <h2 class="lead">Welcome to the Project Management!</h2>
+          <hr class="my-3">
+          <h2 class="lead">Register your role and start managing your projects.</h2>          
+          <h2 class="lead">Project management involves the planning and organization of a company's resources to move a specific task, event or duty towards completion.</h2>
+          <h2 class="lead">It can involve a one-time project or an ongoing activity and resources managed include personnel, finances, technology and intellectual property.</h2>
+          <h2 class="lead">We are building project management application for our client. This is inhouse project for the company.</h2>        
+            <h3 class="mb-4 text-sm mx-auto">
+              Login here...          
+              <a href="{% url 'login'  %}">Login</a>
+           </h3>     
+        </div>
+      </div>    
+    </body>
+</html>

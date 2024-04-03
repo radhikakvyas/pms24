@@ -1,0 +1,52 @@
+<!-- report.html -->
+{% block content %}
+
+{% block navbar %}
+  
+{% endblock navbar %}
+{% block nav %}
+  
+{% endblock nav %}
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+
+<body style="background-color: rgba(16, 218, 245, 0.755);"> 
+<div class="row">
+    <div class="mx-auto" style="width: 50%;">
+      <div class="card mb-2" style="background-color:antiquewhite;">
+        <div class="card-header pb-0">
+          <h1 class="my-3 text-center" style="color: blue;">Project Report</h1>
+          <hr class="my-3" style="border-color:rgb(208, 35, 208);">
+        
+        <h2 class="display-6" style="color: cornflowerblue;">Work Done By Developer</h2>
+        <p class="lead" style="color:black"><b>{{usertasks.user}}</b></p>   
+        <hr class="my-3" style="border-color:rgb(208, 35, 208);">
+        
+        <h2 class="display-6" style="color: cornflowerblue;">Project Name</h2> 
+          {% for project in projects %}
+            <p class="lead" style="color:black"><b>{{project.project_name}}</b></p>
+            <p class="lead" style="color:black"><b>Total Project Time : {{project.project_time}}</b></p>
+          <hr class="my-3" style="border-color:rgb(208, 35, 208);">
+      
+           {% for module in project.modules %}
+                <h2 class="display-6" style="color: cornflowerblue;">Module Name</h2>
+                <p class="lead" style="color:black"><b>{{module.module_name}} -- {{module.module_status}}</b></p>        
+                <hr class="my-3" style="border-color:rgb(208, 35, 208);">
+       
+                <h2 class="display-6" style="color: cornflowerblue;">Task Name</h2>
+                  <ul>        
+                    {% for task in module.tasks %}
+                      <li class="lead" style="color:black"><b>{{task.title}} -- {{task.totalMinutes}} -- {{task.status}}</b></li>
+                    {% endfor %}
+                  </ul>
+              {% endfor %}
+           {% endfor %}
+           </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+{% endblock content %}

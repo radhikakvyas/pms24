@@ -1,0 +1,25 @@
+{% extends "../base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Add Project Status</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {% comment %}{{form|crispy}}{% endcomment %}
+                
+                <div class="mb-3">
+                    <div class="form-control form-control-lg">
+                        {{form.statusName|as_crispy_field}}
+                    </div>
+                </div>
+          
+                <button  type="submit" class="btn btn-primary">Create Project Status</button>
+            </form>
+        </div>
+    </div>
+</div>
+  
+{% endblock content %}
